@@ -3,11 +3,16 @@ const app = express();
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const request = require('request');
+const request = require('request'); 
+const cors = require('cors');
 const Venue = require("./models/Venue");
 
 app.use(logger("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(cors())
 
 mongoose.connect("mongodb://heroku_vk2ndsq5:n9cblcgr9j5p5r6lj5t9qqfklk@ds139124.mlab.com:39124/heroku_vk2ndsq5");
 const db = mongoose.connection;
@@ -112,7 +117,7 @@ app.delete("/api/saved/", function (req, res) {
 /* SETUP FOR RUNNING TESTS VS RUNNING `node server.js`*/ 
 let server;
 function runServer() {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3333;
   return new Promise((resolve, reject) => {
     server = app
       .listen(port, () => {
