@@ -1,0 +1,14 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+env:
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: eoNcv+NptdIZ9SrhmeXT315OYTtdaC9AVSPiLRrK3RJ7A7W82BBuscl12F3DN5FQkH7P+ay6uS66k2LqR3JzvfWx2C+uGhjuOWNW4U+SF5I4KPLDXKZYXYU4r6DAAwdbfElVrsXGtQSAdN6ZSb/tg37QWbFeaibX78+dTG0q5HlKoxYw9sYRKbOXcDcooY0yC4CPDlacPQ1X11p+dMS9Skr36CG9cORZA9mArJkFFz5Q2K9iXMgpy400oe6OAR7CDa3Fn332PFXvh43Qu/pDSdSd9RRIkPiUeJCa43dCLPaPT+NxfNYZe9dtB3FqZWGh2DBQPSP/dp2YLilTPsk4na+wWsWL40pDfcdgXJ4fkwY2fFgfRahCKv4IE46LJFRKU7w9GeTRAr+PxOhB+VA+wyNyI7RQoepboE1vbT0xktkADsrzRFv2W3KhHK2kGTruYSxgVuZm76zgIZniL3yR/oH9WZzM9g+MJCWQqz3p1LqDKWE6rdeWbk+Nxm/D35+hK8d3eDus6ARdHTDoD9eh14fdIGhUc9IXskVaIyrV+SExOnLQ2hC5ScB35/G55k0lGXyeHDSwer8wU/10R02ZvHjdFOfPA1luxJG2DTdKsPXagLTe+fuuV975YZlhDsrGjzXXI2zbos0Frppkbl9iGDxdj0VzyoeUm1O3LQMFPRQ=
+  app: venue-finder-backend
+  on:
+    repo: KJax101/venue-finder-backend
